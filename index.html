@@ -12,10 +12,15 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Courier New', 'Courier', monospace;
+            background: #fef9f3;
+            background-image: 
+                linear-gradient(90deg, rgba(200,200,200,.1) 1px, transparent 1px),
+                linear-gradient(rgba(200,200,200,.1) 1px, transparent 1px);
+            background-size: 20px 20px;
             min-height: 100vh;
-            padding: 40px 20px;
+            padding: 60px 20px;
+            color: #2a2a2a;
         }
 
         .container {
@@ -24,137 +29,96 @@
         }
 
         header {
-            text-align: center;
-            margin-bottom: 50px;
-            color: white;
+            margin-bottom: 80px;
+            position: relative;
         }
 
         h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-size: 2.8em;
+            margin-bottom: 16px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #2a2a2a;
+            transform: skewY(-1deg);
         }
 
         .subtitle {
-            font-size: 1.2em;
-            opacity: 0.9;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-        }
-
-        .thumbnail {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3em;
-            color: white;
-        }
-
-        .card:nth-child(2) .thumbnail { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
-        .card:nth-child(3) .thumbnail { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
-        .card:nth-child(4) .thumbnail { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
-        .card:nth-child(5) .thumbnail { background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); }
-        .card:nth-child(6) .thumbnail { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
-
-        .content {
-            padding: 20px;
-        }
-
-        .content h2 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            color: #333;
-        }
-
-        .content p {
+            font-size: 1em;
             color: #666;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .tag {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            margin-right: 5px;
-            margin-top: 5px;
+            font-weight: 400;
+            font-style: italic;
+            margin-left: 4px;
         }
 
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 70px;
         }
 
         .section-header {
-            background: white;
-            padding: 20px 30px;
-            border-radius: 12px;
+            padding: 20px 24px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-            margin-bottom: 20px;
+            background: #fff;
+            border: 2px solid #2a2a2a;
+            border-radius: 2px;
+            transition: all 0.2s ease;
+            margin-bottom: 32px;
+            position: relative;
+            transform: rotate(-0.5deg);
+            box-shadow: 4px 4px 0px rgba(0,0,0,0.1);
         }
 
         .section-header:hover {
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-            transform: translateY(-2px);
+            transform: rotate(0deg) translateY(-2px);
+            box-shadow: 6px 6px 0px rgba(0,0,0,0.15);
         }
 
         .section-title {
-            font-size: 1.8em;
-            color: #333;
+            font-size: 1.4em;
+            color: #2a2a2a;
             margin: 0;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
         .section-count {
-            background: #667eea;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
+            color: #666;
             font-size: 0.9em;
-            margin-left: 15px;
+            margin-left: 16px;
+            font-weight: 400;
+            font-style: italic;
         }
 
         .toggle-icon {
-            font-size: 1.5em;
-            color: #667eea;
+            font-size: 1.4em;
+            color: #2a2a2a;
             transition: transform 0.3s ease;
+            font-weight: bold;
         }
 
         .section.collapsed .toggle-icon {
-            transform: rotate(-90deg);
+            transform: rotate(90deg);
         }
 
         .section-content {
             max-height: 5000px;
             overflow: hidden;
-            transition: max-height 0.5s ease, opacity 0.3s ease;
+            transition: max-height 0.4s ease, opacity 0.3s ease;
             opacity: 1;
         }
 
@@ -162,20 +126,186 @@
             max-height: 0;
             opacity: 0;
         }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: #fff;
+            border: 2px solid #2a2a2a;
+            border-radius: 3px;
+            overflow: hidden;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            position: relative;
+            box-shadow: 5px 5px 0px rgba(0,0,0,0.1);
+        }
+
+        .card:nth-child(odd) {
+            transform: rotate(0.5deg);
+        }
+
+        .card:nth-child(even) {
+            transform: rotate(-0.5deg);
+        }
+
+        .card:hover {
+            transform: rotate(0deg) translateY(-4px) scale(1.02);
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.15);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 8px;
+            height: 8px;
+            background: none;
+            border: 2px solid #ff6b6b;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        .thumbnail {
+            width: 100%;
+            height: 140px;
+            background: #fef9f3;
+            background-image: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(200,200,200,.1) 10px,
+                rgba(200,200,200,.1) 11px
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5em;
+            border-bottom: 2px dashed #2a2a2a;
+            position: relative;
+        }
+
+        .thumbnail::after {
+            content: 'DRAFT';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            font-size: 0.2em;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            color: #999;
+            letter-spacing: 0.1em;
+        }
+
+        .content {
+            padding: 18px;
+            background: #fff;
+        }
+
+        .content h2 {
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            color: #2a2a2a;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            position: relative;
+            display: inline-block;
+        }
+
+        .content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 40%;
+            height: 2px;
+            background: #ff6b6b;
+            transform: skewX(-15deg);
+        }
+
+        .content p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 14px;
+            font-size: 0.85em;
+            font-family: 'Courier New', monospace;
+        }
+
+        .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            display: inline-block;
+            background: none;
+            color: #2a2a2a;
+            padding: 6px 14px;
+            border: 2px solid #2a2a2a;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: relative;
+            transform: rotate(-1deg);
+        }
+
+        .tag:nth-child(even) {
+            transform: rotate(1deg);
+        }
+
+        .tag::before {
+            content: '✓';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 16px;
+            height: 16px;
+            background: #fff;
+            border: 2px solid #2a2a2a;
+            border-radius: 50%;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff6b6b;
+            font-weight: bold;
+        }
+
+        /* Sketchy annotation lines */
+        .card:nth-child(3n)::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(255, 107, 107, 0.3);
+            border-radius: 50%;
+            transform: rotate(15deg);
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Prototype Showcase</h1>
-            <p class="subtitle">Explore our latest experimental projects</p>
+            <h1>Prototypes</h1>
+            <p class="subtitle">// experimental design explorations & sketches</p>
         </header>
 
         <div class="section">
             <div class="section-header" onclick="toggleSection(this)">
                 <div>
-                    <span class="section-title">Web Applications</span>
-                    <span class="section-count">3 projects</span>
+                    <span class="section-title">Claude.ai</span>
+                    <span class="section-count">[ 3 sketches ]</span>
                 </div>
                 <span class="toggle-icon">▼</span>
             </div>
@@ -184,20 +314,24 @@
                     <div class="card">
                         <div class="thumbnail">🚀</div>
                         <div class="content">
-                            <h2><a href="./prototypes/scratchproto.html">StickerApp</a></h2>
+                            <h2><a href="./prototypes/protohome1.html">First Prototypes Home</a></h2>
                             <p>A comprehensive analytics dashboard with real-time data visualization and insights.</p>
-                            <span class="tag">Analytics</span>
-                            <span class="tag">Dashboard</span>
+                            <div class="tags">
+                                <span class="tag">Analytics</span>
+                                <span class="tag">Dashboard</span>
+                            </div>
                         </div>
                     </div>
 
                     <div class="card">
                         <div class="thumbnail">🎨</div>
                         <div class="content">
-                            <h2>Design System</h2>
+                            <h2><a href="./prototypes/scratchproto.html">Sticker Store</a></h2>
                             <p>Complete UI component library with interactive examples and documentation.</p>
-                            <span class="tag">UI/UX</span>
-                            <span class="tag">Components</span>
+                            <div class="tags">
+                                <span class="tag">UI/UX</span>
+                                <span class="tag">Components</span>
+                            </div>
                         </div>
                     </div>
 
@@ -206,8 +340,10 @@
                         <div class="content">
                             <h2>AI Assistant</h2>
                             <p>Intelligent chatbot interface with natural language processing capabilities.</p>
-                            <span class="tag">AI</span>
-                            <span class="tag">Chat</span>
+                            <div class="tags">
+                                <span class="tag">AI</span>
+                                <span class="tag">Chat</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -218,7 +354,7 @@
             <div class="section-header" onclick="toggleSection(this)">
                 <div>
                     <span class="section-title">Mobile & Gaming</span>
-                    <span class="section-count">2 projects</span>
+                    <span class="section-count">[ 2 sketches ]</span>
                 </div>
                 <span class="toggle-icon">▼</span>
             </div>
@@ -229,8 +365,10 @@
                         <div class="content">
                             <h2>Mobile App</h2>
                             <p>Cross-platform mobile application with smooth animations and native feel.</p>
-                            <span class="tag">Mobile</span>
-                            <span class="tag">React Native</span>
+                            <div class="tags">
+                                <span class="tag">Mobile</span>
+                                <span class="tag">React Native</span>
+                            </div>
                         </div>
                     </div>
 
@@ -239,8 +377,10 @@
                         <div class="content">
                             <h2>Game Engine</h2>
                             <p>Lightweight 2D game engine with physics simulation and collision detection.</p>
-                            <span class="tag">Gaming</span>
-                            <span class="tag">WebGL</span>
+                            <div class="tags">
+                                <span class="tag">Gaming</span>
+                                <span class="tag">WebGL</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -251,7 +391,7 @@
             <div class="section-header" onclick="toggleSection(this)">
                 <div>
                     <span class="section-title">Security & Privacy</span>
-                    <span class="section-count">1 project</span>
+                    <span class="section-count">[ 1 sketch ]</span>
                 </div>
                 <span class="toggle-icon">▼</span>
             </div>
@@ -262,8 +402,10 @@
                         <div class="content">
                             <h2>Security Suite</h2>
                             <p>End-to-end encryption tools for secure messaging and file sharing.</p>
-                            <span class="tag">Security</span>
-                            <span class="tag">Privacy</span>
+                            <div class="tags">
+                                <span class="tag">Security</span>
+                                <span class="tag">Privacy</span>
+                            </div>
                         </div>
                     </div>
                 </div>
